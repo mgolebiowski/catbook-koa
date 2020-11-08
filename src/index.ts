@@ -6,18 +6,14 @@ import logger from "koa-logger";
 
 import dotenv from 'dotenv';
 
+import { get } from './cats';
+
 dotenv.config();
 
 const app = new Koa();
 const router = new Router();
 
-router.get("/random_cat", async (ctx, next) => {
-  ctx.body = {
-    msg: "hello world",
-  };
-
-  await next();
-});
+router.get("/random_cat", get);
 
 app.use(json());
 app.use(logger());
