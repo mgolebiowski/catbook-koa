@@ -1,12 +1,11 @@
 import Router from "koa-router";
 
-import { get } from './cats';
+import { get } from "./cats";
 
 export function initRouting() {
-    const router = new Router();
-        
-    router.get("/random_cat", get);
+  const router = new Router();
 
-    return router;
+  router.get("/random_cat", get);
+
+  return router;
 }
-
