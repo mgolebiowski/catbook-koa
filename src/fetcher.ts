@@ -20,18 +20,15 @@ export class CatFetcher {
         return this.fetchApi(`/images/${id}`);
     }
 
-    public async getRandomCat() {
-        const randomNumberOne = Math.floor(Math.random() * (100 + 1));
-        
+    public async getRandomCat() {        
         const params = querystring.stringify({
             size: 'full',
             order: 'RANDOM',
-            limit: randomNumberOne,
+            limit: 1,
         });
         
         const response = await this.fetchApi(`/images/search?${params}`);
         const body = await response.json();
-        const randomNumberTwo = Math.floor(Math.random() * (body.length + 1));
-        return body[randomNumberTwo];
+        return body[0];
     }
 }
