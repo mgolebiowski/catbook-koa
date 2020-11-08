@@ -1,4 +1,4 @@
-import { CatFetcher } from './fetcher';
+import { CatFetcher } from '../services/fetcher';
 
 import Koa from 'koa';
 
