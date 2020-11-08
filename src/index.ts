@@ -3,6 +3,7 @@ import Router from "koa-router";
 
 import json from "koa-json";
 import logger from "koa-logger";
+import cors from '@koa/cors';
 
 import dotenv from 'dotenv';
 
@@ -15,6 +16,7 @@ const router = new Router();
 
 router.get("/random_cat", get);
 
+app.use(cors());
 app.use(json());
 app.use(logger());
 
